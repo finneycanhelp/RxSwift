@@ -4,9 +4,9 @@ import RxSwift
 import Foundation
 
 /*:
-# Subscribing to Observable sequeces
+# Subscribing to Observable sequences
 
-There are several ways for subscribe to Observable sequeces, next several examples:
+There are several ways to subscribe to Observable sequences. Here are a few examples:
 
 */
 
@@ -25,7 +25,7 @@ example("subscribe with optional callbacks per event type") {
     
     let subscription = sequenceOfJustOneRedCircle
         .subscribe(onNext: {
-            print("Emision element of sequence is \($0)")
+            print("Emission element of sequence is \($0)")
             },
             onError: {
                 print("Oops an error occurred \($0)")
@@ -38,12 +38,12 @@ example("subscribe with optional callbacks per event type") {
 }
 
 
-example("subscribe only to emited elements") {
+example("subscribe only to emitted elements") {
     let sequenceOfJustOneRedCircle/* : Observable<String> */ = Observable.just("🔴")
     
     let subscription = sequenceOfJustOneRedCircle
         .subscribeNext {
-            print("Emision element of sequence is \($0)")
+            print("Emitted element of sequence is \($0)")
     }
 }
 
@@ -73,7 +73,7 @@ example("subscribe only to the error event, (no error ocurred so nothing is prin
 /*:
 ## Side effects
 
-It is not advisable to leave the Rx monad (is not pure reactive programming). But if desired there `doOn` operator
+It is not advisable to leave the Rx monad. (That is not pure reactive programming). But, if desired there is the `doOn` operator.
 
 
 ### `doOn`

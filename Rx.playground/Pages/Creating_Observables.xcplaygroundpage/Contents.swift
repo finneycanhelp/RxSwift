@@ -8,7 +8,7 @@ import Foundation
 
 # Creating Observable sequences
 
-There are a number of functions available to make Observables, in the rest of this page, we review several methods of Observable sequences creation:
+There are a number of functions available to make Observables. In the rest of this page, we review several methods used to create Observable sequences.
 
 
 ### empty
@@ -43,7 +43,7 @@ example("never") {
 
 /*:
 ### just
-`just` represents sequence that contains one element. It sends two messages to subscribers. The first message is the value of single element and the second message is `.Completed`.
+`just` represents a sequence that contains one element. It sends two messages to subscribers. The first message is the value of the single element and the second message is `.Completed`.
 */
 
 example("just") {
@@ -85,7 +85,7 @@ example("toObservable") {
 
 /*:
 ### create
-`create` creates sequence using Swift closure. This examples creates custom version of `just` operator.
+`create` creates a sequence using a Swift closure. This example creates a custom version of the `just` operator.
 */
 
 example("create") {
@@ -108,7 +108,7 @@ example("create") {
 
 /*:
 ### generate
-`generate` creates sequence that generates its values and determines when to terminate based on its previous values.
+`generate` creates a sequence that generates its values and determines when to terminate based on its previous values.
 */
 
 example("generate") {
@@ -127,7 +127,7 @@ example("generate") {
 
 /*:
 ### failWith
-create an Observable that emits no items and terminates with an error
+creates an Observable that emits no items and terminates with an error
 */
 
 example("failWith") {
@@ -144,7 +144,7 @@ example("failWith") {
 /*:
 ### `deferred`
 
-do not create the Observable until the observer subscribes, and create a fresh Observable for each observer
+do not create the Observable until the observer subscribes and create a fresh Observable for each observer
 
 ![](https://raw.githubusercontent.com/kzaher/rxswiftcontent/master/MarbleDiagrams/png/defer.png)
 
@@ -199,7 +199,7 @@ Create an Observable that emits a particular item multiple times
 
 example("repeatElement") {
     let repeatedSequence/* : Observable<String> */  = Observable.repeatElement("🔵", scheduler: MainScheduler.instance)
-        .take(5) // for example take can limit number of repetitions
+        .take(5) // for example take can limit the number of repetitions
     
     let subscription = repeatedSequence
         .subscribe { event in
